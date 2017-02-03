@@ -1,0 +1,211 @@
+/
+Build OPENAMP library for remote baremetal and Master Linux
+/
+/
+Cleaning open AMP components..
+/
+rm -f libs/open_amp/libopen_amp.a  remoteproc/elf_loader.o  remoteproc/remoteproc.o  remoteproc/remoteproc_loader.o  remoteproc/rsc_table_parser.o  rpmsg/remote_device.o  rpmsg/rpmsg.o  rpmsg/rpmsg_core.o  virtio/virtio.o  virtio/virtqueue.o  proxy/remote/rpmsg_retarget/rpmsg_retarget.o  common/hil/hil.o  common/llist/llist.o  common/shm/sh_mem.o  porting/config/config.o  porting/cyclone_v_soc_dk/platform.o  porting/cyclone_v_soc_dk/platform_info.o  porting/env/bm_env.o  porting/cyclone_v_soc_dk/cyclone_trampoline.o  remoteproc/elf_loader.d  remoteproc/remoteproc.d  remoteproc/remoteproc_loader.d  remoteproc/rsc_table_parser.d  rpmsg/remote_device.d  rpmsg/rpmsg.d  rpmsg/rpmsg_core.d  virtio/virtio.d  virtio/virtqueue.d  proxy/remote/rpmsg_retarget/rpmsg_retarget.d  common/hil/hil.d  common/llist/llist.d  common/shm/sh_mem.d  porting/config/config.d  porting/cyclone_v_soc_dk/platform.d  porting/cyclone_v_soc_dk/platform_info.d  porting/env/bm_env.d  porting/cyclone_v_soc_dk/cyclone_trampoline.d
+/
+Building open AMP components..
+/
+CC remoteproc/elf_loader.o
+CC remoteproc/remoteproc.o
+CC remoteproc/remoteproc_loader.o
+CC remoteproc/rsc_table_parser.o
+CC rpmsg/remote_device.o
+CC rpmsg/rpmsg.o
+CC rpmsg/rpmsg_core.o
+CC virtio/virtio.o
+CC virtio/virtqueue.o
+CC proxy/remote/rpmsg_retarget/rpmsg_retarget.o
+CC common/hil/hil.o
+CC common/llist/llist.o
+CC common/shm/sh_mem.o
+CC porting/config/config.o
+CC porting/cyclone_v_soc_dk/platform.o
+CC porting/cyclone_v_soc_dk/platform_info.o
+CC porting/env/bm_env.o
+AS porting/cyclone_v_soc_dk/cyclone_trampoline.o
+AR libs/open_amp/libopen_amp.a
+c:\mgc\embedded201406\readystart-arm\codebench\bin\arm-none-eabi-ar.exe: creating libs/open_amp/libopen_amp.a
+/
+Build remote baremetal applications
+/
+/
+Cleaning applications..
+/
+make  -f samples/remote/baremetal/matrix_multiply/make clean
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+rm -f  samples/remote/baremetal/matrix_multiply/matrix_multiply.o  samples/remote/baremetal/matrix_multiply/rsc_table.o  samples/remote/baremetal/matrix_multiply/matrix_multiply.d  samples/remote/baremetal/matrix_multiply/rsc_table.d samples/remote/baremetal/matrix_multiply/matrix_multiply.out  samples/remote/baremetal/matrix_multiply/matrix_multiply.map
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+make  -f tests/remote/baremetal/echo_test/make clean
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+rm -f  tests/remote/baremetal/echo_test/echo_test.o  tests/remote/baremetal/echo_test/rsc_table.o  tests/remote/baremetal/echo_test/echo_test.d  tests/remote/baremetal/echo_test/rsc_table.d tests/remote/baremetal/echo_test/echo_test.out  tests/remote/baremetal/echo_test/echo_test.map
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+make  -f tests/remote/baremetal/func_test_suite/make clean
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+rm -f  tests/remote/baremetal/func_test_suite/func_test_suite.o  tests/remote/baremetal/func_test_suite/rsc_table.o  tests/remote/baremetal/func_test_suite/func_test_suite.d  tests/remote/baremetal/func_test_suite/rsc_table.d tests/remote/baremetal/func_test_suite/func_test_suite.out  tests/remote/baremetal/func_test_suite/func_test_suite.map
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+make  -f samples/remote/baremetal/rpc_demo/make clean
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+rm -f  samples/remote/baremetal/rpc_demo/rpc_demo.o  samples/remote/baremetal/rpc_demo/rsc_table.o  ../proxy/remote/rpmsg_retarget/rpmsg_retarget.o  samples/remote/baremetal/rpc_demo/rpc_demo.d  samples/remote/baremetal/rpc_demo/rsc_table.d  ../proxy/remote/rpmsg_retarget/rpmsg_retarget.d samples/remote/baremetal/rpc_demo/rpc_demo.out  samples/remote/baremetal/rpc_demo/rpc_demo.map
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+/
+Building applications..
+/
+make  -f samples/remote/baremetal/matrix_multiply/make
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+CC samples/remote/baremetal/matrix_multiply/matrix_multiply.o
+CC samples/remote/baremetal/matrix_multiply/rsc_table.o
+Building matrix multiplication sample for baremetal environment : samples/remote/baremetal/matrix_multiply/matrix_multiply.out
+arm-none-eabi-gcc -Wl,-Map=samples/remote/baremetal/matrix_multiply/matrix_multiply.map -Wl,--gc-sections -T"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal/linker_remote.ld" -L"/c/users/nrasheed/open-amp-master/libs/open_amp" -L"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal" -o "samples/remote/baremetal/matrix_multiply/matrix_multiply.out" -Wl,--start-group  samples/remote/baremetal/matrix_multiply/matrix_multiply.o  samples/remote/baremetal/matrix_multiply/rsc_table.o -lopen_amp -lbaremetal_remote -lc -lm -lstdc++ -lcs3 -lcs3arm -lcs3unhosted -Wl,--end-group 	
+c:/mgc/embedded201406/readystart-arm/codebench/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib\libcs3unhosted.a(unhosted-_close.o): warning: IO function '_close' used
+c:/mgc/embedded201406/readystart-arm/codebench/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib\libcs3unhosted.a(unhosted-_read.o): warning: IO function '_read' used
+c:/mgc/embedded201406/readystart-arm/codebench/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib\libcs3unhosted.a(unhosted-_write.o): warning: IO function '_write' used
+Finished building target: samples/remote/baremetal/matrix_multiply/matrix_multiply.out
+Copying ELF image to firmware folder
+cp samples/remote/baremetal/matrix_multiply/matrix_multiply.out firmware/cyclone_v_soc_dk/baremetal/matrix_multiply/firmware
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+make  -f tests/remote/baremetal/echo_test/make
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+CC tests/remote/baremetal/echo_test/echo_test.o
+CC tests/remote/baremetal/echo_test/rsc_table.o
+Building echo test for baremetal : tests/remote/baremetal/echo_test/echo_test.out
+arm-none-eabi-gcc  -Wl,-Map=tests/remote/baremetal/echo_test/echo_test.map -Wl,--gc-sections -T"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal/linker_remote.ld" -L"/c/users/nrasheed/open-amp-master/libs/open_amp" -L"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal" -o "tests/remote/baremetal/echo_test/echo_test.out" -Wl,--start-group  tests/remote/baremetal/echo_test/echo_test.o  tests/remote/baremetal/echo_test/rsc_table.o -lopen_amp -lbaremetal_remote -lc -lm -lstdc++ -lcs3 -lcs3arm -lcs3unhosted -Wl,--end-group 	
+c:/mgc/embedded201406/readystart-arm/codebench/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib\libcs3unhosted.a(unhosted-_close.o): warning: IO function '_close' used
+c:/mgc/embedded201406/readystart-arm/codebench/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib\libcs3unhosted.a(unhosted-_read.o): warning: IO function '_read' used
+c:/mgc/embedded201406/readystart-arm/codebench/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib\libcs3unhosted.a(unhosted-_write.o): warning: IO function '_write' used
+cp tests/remote/baremetal/echo_test/echo_test.out firmware/cyclone_v_soc_dk/baremetal/echo_test/firmware
+Finished building target: tests/remote/baremetal/echo_test/echo_test.out
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+make  -f tests/remote/baremetal/func_test_suite/make
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+CC tests/remote/baremetal/func_test_suite/func_test_suite.o
+CC tests/remote/baremetal/func_test_suite/rsc_table.o
+Building remote test suite for baremetal : tests/remote/baremetal/func_test_suite/func_test_suite.out
+arm-none-eabi-gcc  -Wl,-Map=tests/remote/baremetal/func_test_suite/func_test_suite.map -Wl,--gc-sections -T"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal/linker_remote.ld" -L"/c/users/nrasheed/open-amp-master/libs/open_amp" -L"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal" -o "tests/remote/baremetal/func_test_suite/func_test_suite.out" -Wl,--start-group  tests/remote/baremetal/func_test_suite/func_test_suite.o  tests/remote/baremetal/func_test_suite/rsc_table.o -lopen_amp -lbaremetal_remote -lc -lm -lstdc++ -lcs3 -lcs3arm -lcs3unhosted -Wl,--end-group	
+c:/mgc/embedded201406/readystart-arm/codebench/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib\libcs3unhosted.a(unhosted-_close.o): warning: IO function '_close' used
+c:/mgc/embedded201406/readystart-arm/codebench/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib\libcs3unhosted.a(unhosted-_read.o): warning: IO function '_read' used
+c:/mgc/embedded201406/readystart-arm/codebench/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib\libcs3unhosted.a(unhosted-_write.o): warning: IO function '_write' used
+Copying ELF image to firmware folder
+cp tests/remote/baremetal/func_test_suite/func_test_suite.out firmware/cyclone_v_soc_dk/baremetal/func_test_suite/firmware
+Finished building target: tests/remote/baremetal/func_test_suite/func_test_suite.out
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+make  -f samples/remote/baremetal/rpc_demo/make
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+CC samples/remote/baremetal/rpc_demo/rpc_demo.o
+CC samples/remote/baremetal/rpc_demo/rsc_table.o
+CC ../proxy/remote/rpmsg_retarget/rpmsg_retarget.o
+Building rpc sample for baremetal environment : samples/remote/baremetal/rpc_demo/rpc_demo.out
+arm-none-eabi-gcc -Wl,-Map=samples/remote/baremetal/rpc_demo/rpc_demo.map -Wl,--gc-sections -T"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal/linker_remote.ld" -L"/c/users/nrasheed/open-amp-master/libs/open_amp" -L"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal" -o "samples/remote/baremetal/rpc_demo/rpc_demo.out" -Wl,--start-group  samples/remote/baremetal/rpc_demo/rpc_demo.o  samples/remote/baremetal/rpc_demo/rsc_table.o  ../proxy/remote/rpmsg_retarget/rpmsg_retarget.o -lopen_amp -lbaremetal_remote_rpc -lc -lm -lstdc++ -lcs3 -lcs3arm -lcs3unhosted -Wl,--end-group 	
+Finished building target: samples/remote/baremetal/rpc_demo/rpc_demo.out
+Copying ELF image to firmware folder
+cp samples/remote/baremetal/rpc_demo/rpc_demo.out firmware/cyclone_v_soc_dk/baremetal/rpc_demo/firmware
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+/
+Cleaning Linux Bootstrap
+/
+rm -f  libs/system/cyclone_v_soc_dk/linux/boot.o  libs/system/cyclone_v_soc_dk/linux/rsc_table.o  libs/system/cyclone_v_soc_dk/linux/boot_wrapper.o  libs/system/cyclone_v_soc_dk/linux/boot.d  libs/system/cyclone_v_soc_dk/linux/rsc_table.d  libs/system/cyclone_v_soc_dk/linux/boot_wrapper.d libs/system/cyclone_v_soc_dk/linux/firmware
+/
+Building Linux Bootstrap
+/
+CC libs/system/cyclone_v_soc_dk/linux/boot.o
+CC libs/system/cyclone_v_soc_dk/linux/rsc_table.o
+AS libs/system/cyclone_v_soc_dk/linux/boot_wrapper.o
+Building linux aggregate image : libs/system/cyclone_v_soc_dk/linux/firmware
+arm-none-eabi-gcc  -nostartfiles -T"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/linux/link_remote.ld" -L"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/linux/lib/arm-none-eabi-"  -o "libs/system/cyclone_v_soc_dk/linux/firmware" -Wl,--start-group  libs/system/cyclone_v_soc_dk/linux/boot.o  libs/system/cyclone_v_soc_dk/linux/rsc_table.o  libs/system/cyclone_v_soc_dk/linux/boot_wrapper.o -lc -lm -lstdc++ -lzlib -lfdt -Wl,--end-group 	
+Copying ELF image to firmware folder
+cp libs/system/cyclone_v_soc_dk/linux/firmware apps/firmware/cyclone_v_soc_dk/linux/firmware
+/
+Build OPENAMP library for master baremetal and remote Linux
+/
+/
+Cleaning open AMP components..
+/
+rm -f libs/open_amp/libopen_amp.a  remoteproc/elf_loader.o  remoteproc/remoteproc.o  remoteproc/remoteproc_loader.o  remoteproc/rsc_table_parser.o  rpmsg/remote_device.o  rpmsg/rpmsg.o  rpmsg/rpmsg_core.o  virtio/virtio.o  virtio/virtqueue.o  proxy/remote/rpmsg_retarget/rpmsg_retarget.o  common/hil/hil.o  common/llist/llist.o  common/shm/sh_mem.o  porting/config/config.o  porting/cyclone_v_soc_dk/platform.o  porting/cyclone_v_soc_dk/platform_info.o  porting/env/bm_env.o  porting/cyclone_v_soc_dk/cyclone_trampoline.o  remoteproc/elf_loader.d  remoteproc/remoteproc.d  remoteproc/remoteproc_loader.d  remoteproc/rsc_table_parser.d  rpmsg/remote_device.d  rpmsg/rpmsg.d  rpmsg/rpmsg_core.d  virtio/virtio.d  virtio/virtqueue.d  proxy/remote/rpmsg_retarget/rpmsg_retarget.d  common/hil/hil.d  common/llist/llist.d  common/shm/sh_mem.d  porting/config/config.d  porting/cyclone_v_soc_dk/platform.d  porting/cyclone_v_soc_dk/platform_info.d  porting/env/bm_env.d  porting/cyclone_v_soc_dk/cyclone_trampoline.d
+/
+Building open AMP components..
+/
+CC remoteproc/elf_loader.o
+CC remoteproc/remoteproc.o
+CC remoteproc/remoteproc_loader.o
+CC remoteproc/rsc_table_parser.o
+CC rpmsg/remote_device.o
+CC rpmsg/rpmsg.o
+CC rpmsg/rpmsg_core.o
+CC virtio/virtio.o
+CC virtio/virtqueue.o
+CC proxy/remote/rpmsg_retarget/rpmsg_retarget.o
+CC common/hil/hil.o
+CC common/llist/llist.o
+CC common/shm/sh_mem.o
+CC porting/config/config.o
+CC porting/cyclone_v_soc_dk/platform.o
+CC porting/cyclone_v_soc_dk/platform_info.o
+CC porting/env/bm_env.o
+AS porting/cyclone_v_soc_dk/cyclone_trampoline.o
+AR libs/open_amp/libopen_amp.a
+c:\mgc\embedded201406\readystart-arm\codebench\bin\arm-none-eabi-ar.exe: creating libs/open_amp/libopen_amp.a
+/
+Cleaning applications..
+/
+make  -f samples/master/baremetal/matrix_multiply/make clean
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+rm -f  samples/master/baremetal/matrix_multiply/matrix_multiply.o  samples/master/baremetal/matrix_multiply/matrix_multiply.d samples/master/baremetal/matrix_multiply/matrix_multiply.out  samples/master/baremetal/matrix_multiply/matrix_multiply.map  samples/master/baremetal/matrix_multiply/matrix_multiply.bin samples/master/baremetal/matrix_multiply/firmware1.o samples/master/baremetal/matrix_multiply/firmware2.o
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+make  -f tests/master/baremetal/echo_test/make clean
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+rm -f  tests/master/baremetal/echo_test/echo_test.o  tests/master/baremetal/echo_test/echo_test.d tests/master/baremetal/echo_test/echo_test.out  tests/master/baremetal/echo_test/echo_test.map  tests/master/baremetal/echo_test/echo_test.bin tests/master/baremetal/echo_test/firmware1.o tests/master/baremetal/echo_test/firmware2.o
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+make  -f tests/master/baremetal/func_test_suite/make clean
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+rm -f  tests/master/baremetal/func_test_suite/func_test_suite.o  tests/master/baremetal/func_test_suite/func_test_suite.d tests/master/baremetal/func_test_suite/func_test_suite.out tests/master/baremetal/func_test_suite/firmware1.o tests/master/baremetal/func_test_suite/firmware2.o  tests/master/baremetal/func_test_suite/func_test_suite.map  tests/master/baremetal/func_test_suite/func_test_suite.bin
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+/
+Building applications..
+/
+make  -f samples/master/baremetal/matrix_multiply/make
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+cd firmware/cyclone_v_soc_dk/linux/; cp firmware firmware1; \
+	arm-none-eabi-objcopy -I binary -O elf32-littlearm -B arm firmware1 firmware1.o
+mv firmware/cyclone_v_soc_dk/linux/firmware1.o samples/master/baremetal/matrix_multiply/firmware1.o
+cd firmware/cyclone_v_soc_dk/linux/; cp firmware firmware2; \
+	arm-none-eabi-objcopy -I binary -O elf32-littlearm -B arm firmware2 firmware2.o
+mv firmware/cyclone_v_soc_dk/linux/firmware2.o samples/master/baremetal/matrix_multiply/
+cd firmware/cyclone_v_soc_dk/linux/; rm firmware1; rm firmware2;
+CC samples/master/baremetal/matrix_multiply/matrix_multiply.o
+Building master core matrix multiply sample for baremetal : samples/master/baremetal/matrix_multiply/matrix_multiply.out
+arm-none-eabi-gcc  -Wl,-Map=samples/master/baremetal/matrix_multiply/matrix_multiply.map -Wl,--gc-sections -T"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal/linker_master.ld" -L"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal" -L"/c/users/nrasheed/open-amp-master/libs/open_amp" -o "samples/master/baremetal/matrix_multiply/matrix_multiply.out" -Wl,--start-group  samples/master/baremetal/matrix_multiply/matrix_multiply.o samples/master/baremetal/matrix_multiply/firmware1.o samples/master/baremetal/matrix_multiply/firmware2.o -lbaremetal_master -lopen_amp -lc -lm -lstdc++ -lcs3 -lcs3arm -lcs3unhosted -Wl,--end-group 	
+arm-none-eabi-objcopy -O binary samples/master/baremetal/matrix_multiply/matrix_multiply.out  samples/master/baremetal/matrix_multiply/matrix_multiply.bin
+Finished building target: samples/master/baremetal/matrix_multiply/matrix_multiply.out
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+make  -f tests/master/baremetal/echo_test/make
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+cd firmware/cyclone_v_soc_dk/linux/; cp firmware firmware1; \
+	arm-none-eabi-objcopy -I binary -O elf32-littlearm -B arm firmware1 firmware1.o
+mv firmware/cyclone_v_soc_dk/linux/firmware1.o tests/master/baremetal/echo_test/firmware1.o
+cd firmware/cyclone_v_soc_dk/linux/; cp firmware firmware2; \
+	arm-none-eabi-objcopy -I binary -O elf32-littlearm -B arm firmware2 firmware2.o
+mv firmware/cyclone_v_soc_dk/linux/firmware2.o tests/master/baremetal/echo_test/
+cd firmware/cyclone_v_soc_dk/linux/; rm firmware1; rm firmware2;
+CC tests/master/baremetal/echo_test/echo_test.o
+Building echo test for baremetal : tests/master/baremetal/echo_test/echo_test.out
+arm-none-eabi-gcc  -Wl,-Map=tests/master/baremetal/echo_test/echo_test.map -Wl,--gc-sections -T"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal/linker_master.ld" -L"/c/users/nrasheed/open-amp-master/libs/open_amp" -L"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal" -o "tests/master/baremetal/echo_test/echo_test.out" -Wl,--start-group  tests/master/baremetal/echo_test/echo_test.o tests/master/baremetal/echo_test/firmware1.o tests/master/baremetal/echo_test/firmware2.o -lopen_amp -lbaremetal_master -lc -lm -lstdc++ -lcs3 -lcs3arm -lcs3unhosted -Wl,--end-group 	
+arm-none-eabi-objcopy -O binary tests/master/baremetal/echo_test/echo_test.out  tests/master/baremetal/echo_test/echo_test.bin
+Finished building target: tests/master/baremetal/echo_test/echo_test.out
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
+make  -f tests/master/baremetal/func_test_suite/make
+make[1]: Entering directory `/c/users/nrasheed/open-amp-master/apps'
+cd firmware/cyclone_v_soc_dk/linux/; cp firmware firmware1; \
+	arm-none-eabi-objcopy -I binary -O elf32-littlearm -B arm firmware1 firmware1.o
+mv firmware/cyclone_v_soc_dk/linux/firmware1.o tests/master/baremetal/func_test_suite/firmware1.o
+cd firmware/cyclone_v_soc_dk/linux/; cp firmware firmware2; \
+	arm-none-eabi-objcopy -I binary -O elf32-littlearm -B arm firmware2 firmware2.o
+mv firmware/cyclone_v_soc_dk/linux/firmware2.o tests/master/baremetal/func_test_suite/
+cd firmware/cyclone_v_soc_dk/linux/; rm firmware1; rm firmware2;
+CC tests/master/baremetal/func_test_suite/func_test_suite.o
+Building func_test_suite test for baremetal : tests/master/baremetal/func_test_suite/func_test_suite.out
+arm-none-eabi-gcc  -Wl,-Map=tests/master/baremetal/func_test_suite/func_test_suite.map -Wl,--gc-sections -T"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal/linker_master.ld" -L"/c/users/nrasheed/open-amp-master/libs/open_amp" -L"/c/users/nrasheed/open-amp-master/libs/system/cyclone_v_soc_dk/baremetal" -o "tests/master/baremetal/func_test_suite/func_test_suite.out" -Wl,--start-group  tests/master/baremetal/func_test_suite/func_test_suite.o tests/master/baremetal/func_test_suite/firmware1.o tests/master/baremetal/func_test_suite/firmware2.o -lopen_amp -lbaremetal_master -lc -lm -lstdc++ -lcs3 -lcs3arm -lcs3unhosted -Wl,--end-group	
+arm-none-eabi-objcopy -O binary tests/master/baremetal/func_test_suite/func_test_suite.out  tests/master/baremetal/func_test_suite/func_test_suite.bin
+Finished building target: tests/master/baremetal/func_test_suite/func_test_suite.out
+make[1]: Leaving directory `/c/users/nrasheed/open-amp-master/apps'
